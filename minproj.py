@@ -481,7 +481,10 @@ class LibraryApp:
 
         self.update_stats()
         self.selected_book_id = None
-        self.status_var.set(f"Showing {len(self.tree.get_children())} book(s). Select an available book to enable Borrow Selected.")
+        self.status_var.set(
+            f"Showing {len(self.tree.get_children())} book(s). "
+            "Select a book to view details, return copies, or remove it."
+        )
 
     def update_stats(self):
         borrowed = sum(book.borrowed_quantity for book in self.library.books)
